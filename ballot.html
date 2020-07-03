@@ -1084,6 +1084,106 @@ of power is null and void."
 <!--[if (IE)]></div><![endif]-->
 
 <script>
+  const zipData = {
+    "AL": ["350", "369"],
+    "AK": ["995", "999"],
+    "AZ": ["850", "865"],
+    "AR": ["716", "729", ["755"]], //case "AR": ZIPrange('(ZIP >= 716 && ZIP <= 729) || (ZIP == 755)')
+    "AS": ["967", "967"], //case "AS": ZIPrange('ZIP == 967')
+    "AL": ["350", "369"],
+    "AK": ["995", "999"],
+    "AZ": ["850", "865"],
+    "AR": ["716", "729", ["755"]], //case "AR": ZIPrange('(ZIP >= 716 && ZIP <= 729) || (ZIP == 755)')
+    "AS": ["967", "967"], //case "AS": ZIPrange('ZIP == 967')
+    "CA": ["900", "966"],
+    "CO": ["800", "816"],
+    "CT": ["60", "69"],
+    "DC": ["200", "205"],
+    "DE": ["197", "199"],
+    "FL": ["320", "349", [], ["343", "345", "348"]], //case "FL": ZIPrange('(ZIP >= 320 && ZIP <= 349) && (ZIP != 343 && ZIP !=345 && ZIP!=348)')
+    "GA": ["300", "319"],
+    "GU": ["969", "969"], //case "GU": ZIPrange('ZIP == 969')
+    "HI": ["967", "968"],
+    "ID": ["832", "838"],
+    "IL": ["600", "629"],
+    "IN": ["460", "479"],
+    "IA": ["500", "528"],
+    "KS": ["660", "679"],
+    "KY": ["400", "427"],
+    "LA": ["700", "714"],
+    "ME": ["39", "49"],
+    "MH": ["969", "969"], //case "MH": ZIPrange('ZIP == 969')
+    "MD": ["206", "219"],
+    "MA": ["10", "27", ["55"]], //case "MA": ZIPrange('(ZIP >= 10 && ZIP <= 27) || (ZIP == 55)')
+    "MI": ["480", "499"],
+    "MN": ["550", "567"],
+    "MS": ["386", "397"],
+    "MO": ["630", "658"],
+    "MT": ["590", "599"],
+    "NE": ["680", "693"],
+    "NV": ["889", "898"],
+    "NH": ["30", "38"],
+    "NJ": ["70", "89"],
+    "NM": ["870", "884"],
+    "NY": ["90", "149", ["4", "63"]], //case "NY": ZIPrange('(ZIP >= 90 && ZIP <= 149) || (ZIP == 4) || (ZIP == 63)')
+    "NC": ["269", "289"],
+    "ND": ["580", "588"],
+    "MP": ["969", "969"], //case "MP": ZIPrange('ZIP == 969')
+    "OH": ["430", "458"],
+    "OK": ["730", "749"],
+    "OR": ["970", "979"],
+    "PA": ["150", "196"],
+    "PR": ["6", "9"],
+    "RI": ["28", "29"],
+    "SC": ["290", "299"],
+    "SD": ["570", "577"],
+    "TN": ["370", "385"],
+    "TX": ["750", "799", ["885"]],  //case "TX": ZIPrange('(ZIP >= 750 && ZIP <= 799) || (ZIP == 885)')
+    "UT": ["840", "847"],
+    "VT": ["50", "59"],
+    "VA": ["220", "246", ["201"]],  //case "VA": ZIPrange('(ZIP >= 220 && ZIP <= 246) || (ZIP == 201)')
+    "VI": ["8", "8"],  //case "VI": ZIPrange('ZIP == 8')
+    "WA": ["980", "994"],
+    "WI": ["530", "549"],
+    "WV": ["247", "268"],
+    "WY": ["820", "831"],
+
+    "AA": ["340", "340"], //case "AA": ZIPrange('ZIP == 340')
+    "AE": ["90", "98"],
+    "AP": ["962", "966"],
+    "MP": ["969", "969"],
+  }
+
+  assert(validateZip("MO", 63126))
+  assert(!validateZip("33333"))
+  assert(validateZip("TX", 88500))
+  assert(validateZip("NY", 6300))
+
+  function validateZip(state, zip) {
+    zd = zipData[state]
+    if (!zd)
+      return false;
+    min = zd[0] * 100;
+    max = zd[1] * 100;
+    if (zd[2])
+      add = zd[2].map(function(prefix) { prefix * 100 })
+    else
+      add = [];
+    if (zd[3])
+      remove = zd[2].map(function(prefix) { prefix * 100 })
+    else
+      remove = [];
+
+    if (add.includes(zip))
+      return true;
+    else if (remove.includes(zip))
+      return false;
+    else if ((zip >= min) && (zip <= max))
+      return true;
+    else
+      return false;
+  }
+
   $("#m_-4449408468207555261ss-form").submit(
       function (e) {
         // Don't let the regular form submit occur.
