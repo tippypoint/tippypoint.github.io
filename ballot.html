@@ -30,13 +30,13 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
-  // Facebook
+  <!-- facebook -->
   <meta property="og:title" content="Police Contract Reform">
   <meta property="og:description" content="Collect signatures to change the law around police union contracts.">
   <meta property="og:image" content="http://policecontractreform.org/scales.png">
   <meta property="og:url" content="http://policecontractreform.org/ballot.html">
 
-  // Twitter
+  <!-- twitter -->
   <meta name="twitter:title" content="Police Contract Reform ">
   <meta name="twitter:description" content=" Collect signatures to change the law around police union contracts.">
   <meta name="twitter:image" content=" http://policecontractreform.org/scales.png">
@@ -455,8 +455,9 @@ of power is null and void."
 
                           <select style="text-decoration:none;border-radius: 10px;display:block;color:#39393a;background-color:#fcbe95;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:80%; width:calc(80% - 2px);;border-top:2px solid #39393a;border-right:2px solid #39393a;border-bottom:2px solid #39393a;border-left:2px solid #39393a;padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
                                   type="text" name="entry.18563292" dir="auto" aria-label="State  " aria-required="true"
-                                  title="">
-                            <option value="" selected="selected">Select a State</option>
+                                  title="state"
+                                  id="state">
+                            <option value="" selected="selected">State</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -621,10 +622,10 @@ of power is null and void."
 
                           <!-- ZIP CODE INPUT CONTROL -->
 
-                          <input style="text-decoration:none;border-radius: 10px;-moz-appearance: textfield;display:block;color:#39393a;background-color:#fcbe95;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:80%; width:calc(80% - 2px);;border-top:2px solid #39393a;border-right:2px solid #39393a;border-bottom:2px solid #39393a;border-left:2px solid #39393a;padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
+                          <input style="text-decoration:none;border-radius: 10px;-moz-appearance: textfield;display:block;color:#000000;background-color:#fcbe95;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:80%; width:calc(80% - 2px);;border-top:2px solid #39393a;border-right:2px solid #39393a;border-bottom:2px solid #39393a;border-left:2px solid #39393a;padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
                                  type="text" pattern="[0-9]{5}" name="entry.1927352609" dir="auto"
-                                 aria-label="Zip  Must be a number" aria-required="true" title="Must be a number">
-
+                                 aria-label="Zip  Must be a number" aria-required="true" title="Must be a number"
+                                 id="zipcode" placeholder="Zip Code">
                         </div>
 
                         <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
@@ -734,11 +735,11 @@ of power is null and void."
 
                         <!-- EMAIL INPUT CONTROL -->
                         <div align="left">
-                          <input style="text-decoration:none;border-radius: 10px;display:block;color:#39393a;background-color:#fcbe95;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:80%; width:calc(80% - 2px);;border-top:2px solid #39393a;border-right:2px solid #39393a;border-bottom:2px solid #39393a;border-left:2px solid #39393a;padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
-                                 type="email" name="entry.532194116" dir="auto" aria-label="Email  "
-                                 aria-required="true" title="">
+                          <input style="text-decoration:none;border-radius: 10px;display:block;color:#000000;background-color:#fcbe95;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:80%; width:calc(80% - 2px);;border-top:2px solid #39393a;border-right:2px solid #39393a;border-bottom:2px solid #39393a;border-left:2px solid #39393a;padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
+                                 type="text" name="entry.532194116" dir="auto" aria-label="Email  "
+                                 aria-required="true" title=""
+                                 id="email" placeholder="Email Address">
                         </div>
-
 
                         <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
                       </div>
@@ -1154,11 +1155,6 @@ of power is null and void."
     "MP": ["969", "969"],
   }
 
-  assert(validateZip("MO", 63126))
-  assert(!validateZip("33333"))
-  assert(validateZip("TX", 88500))
-  assert(validateZip("NY", 6300))
-
   function validateZip(state, zip) {
     zd = zipData[state]
     if (!zd)
@@ -1166,23 +1162,48 @@ of power is null and void."
     min = zd[0] * 100;
     max = zd[1] * 100;
     if (zd[2])
-      add = zd[2].map(function(prefix) { prefix * 100 })
+      add = zd[2].map(function(prefix) { return prefix * 100 })
     else
       add = [];
     if (zd[3])
-      remove = zd[2].map(function(prefix) { prefix * 100 })
+      remove = zd[3].map(function(prefix) { return prefix * 100 })
     else
       remove = [];
 
-    if (add.includes(zip))
+    //console.info("Zip data for", state, zd);
+    //console.info("Add", add);
+    //console.info("Remove", remove);
+
+    if (add.includes(zip)) {
+      //console.log("Matches include", zip, add);
       return true;
-    else if (remove.includes(zip))
+    }
+    else if (remove.includes(zip)) {
+      //console.log("Matches 'remove'", zip, remove);
       return false;
-    else if ((zip >= min) && (zip <= max))
+    }
+    else if ((zip >= min) && (zip <= max)) {
+      //console.log("In range:", zip, min, max);
       return true;
-    else
+    }
+    else {
+      //console.log("Out of range:", zip, min, max);
       return false;
+    }
   }
+
+  console.log(!validateZip("33333"));
+  console.log(validateZip("TX", 88500));
+  console.log(validateZip("NY", 6300));
+  console.log(validateZip("MO", 63126));
+  console.log(!validateZip("FL", 34800));
+
+  function zip_or_state_change(e) {
+    console.log("zip or state change", e);
+  }
+
+  $(document).on('change', '#zipcode', zip_or_state_change);
+  $(document).on('change', '#state', zip_or_state_change);
 
   $("#m_-4449408468207555261ss-form").submit(
       function (e) {
