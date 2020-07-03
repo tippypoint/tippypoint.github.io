@@ -345,7 +345,7 @@
 
 
                     <!-- forms and fields-->
-                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe7gl-SsB955NYqLvUUGpijD7tzPOUeEOAwMS5cvJjeIqI7cw/formResponse" method="POST" target="_blank">
+                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe7gl-SsB955NYqLvUUGpijD7tzPOUeEOAwMS5cvJjeIqI7cw/formResponse" method="POST" target="_blank" id="sigform">
                         <ol role="list">
 
                             <!-- STATE OF  -->
@@ -763,6 +763,36 @@
         </tbody>
     </table>
     <!--[if (IE)]></div><![endif]-->
+
+    <script>
+        $("#sigform").submit(
+          function(e) {
+              e.preventDefault(); // avoid to execute the actual submit of the form.
+              var form = $(this);
+              var url = form.attr('action');
+              console.log(form);
+              Swal.fire("URL: " + url)
+              return;
+
+              $.ajax({
+                  type: "POST",
+                  url: url,
+                  data: form.serialize(), // serializes the form's elements.
+                  success: function (data) {
+                      alert(data); // show response from the php script.
+                  }
+              });
+          }
+        );
+
+        /*
+        $("#sigform").ajaxForm({
+
+            url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSe7gl-SsB955NYqLvUUGpijD7tzPOUeEOAwMS5cvJjeIqI7cw/formResponse',
+            type: 'post'
+        });
+        */
+    </script>
 </body>
 
 </html>
