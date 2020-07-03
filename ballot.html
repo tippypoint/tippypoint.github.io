@@ -711,15 +711,6 @@ of power is null and void."</em>
                   url: url,
                   data: form.serialize(), // serializes the form's elements.
                   dataType: 'jsonp',
-                  success: function (data) {
-                      console.log(data);
-                      button.style.backgroundColor = "gray";
-                      Swal.fire('Submitted!')
-                  },
-                  error: function (err) {
-                      c
-                      Swal.fire("Error: " + err)
-                  }
               };
 
               promise = $.ajax(request);
@@ -727,6 +718,7 @@ of power is null and void."</em>
 
               promise.done(function(data) {
                   console.info(data);
+                  button.style.backgroundColor = "gray";
                   Swal.fire('Submitted!')
               }).fail(function(err) {
                   console.error(err);
