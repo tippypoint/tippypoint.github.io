@@ -701,8 +701,9 @@ of power is null and void."</em>
               // Don't let the regular form submit occur.
               e.preventDefault();
 
-              var form = $(this);
-              var url = form.attr('action');
+              const form = $(this);
+              const url = form.attr('action');
+              const button = $("#m_5949356732789988194ss-submit")
               console.log(form);
 
               $.ajax({
@@ -711,9 +712,12 @@ of power is null and void."</em>
                   data: form.serialize(), // serializes the form's elements.
                   dataType: 'jsonp',
                   success: function (data) {
+                      console.log(data);
+                      button.style.backgroundColor = "gray";
                       Swal.fire('Submitted!')
                   },
-                  failure: function (err) {
+                  error: function (err) {
+                      c
                       Swal.fire("Error: " + err)
                   }
               });
