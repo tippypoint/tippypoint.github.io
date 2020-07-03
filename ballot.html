@@ -706,7 +706,7 @@ of power is null and void."</em>
               const button = $("#m_5949356732789988194ss-submit")
               console.log(form);
 
-              $.ajax({
+              request = {
                   type: "POST",
                   url: url,
                   data: form.serialize(), // serializes the form's elements.
@@ -720,7 +720,10 @@ of power is null and void."</em>
                       c
                       Swal.fire("Error: " + err)
                   }
-              });
+              };
+
+              response = $.ajax(request);
+              console.log(response);
           }
         );
     </script>
