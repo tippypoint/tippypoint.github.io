@@ -722,8 +722,16 @@ of power is null and void."</em>
                   }
               };
 
-              response = $.ajax(request);
-              console.log(response);
+              promise = $.ajax(request);
+              console.log(promise);
+
+              promise.done(function(data) {
+                  console.info(data);
+                  Swal.fire('Submitted!')
+              }).fail(function(err) {
+                  console.error(err);
+                  Swal.fire('Error!: ' + err)
+              });
           }
         );
     </script>
