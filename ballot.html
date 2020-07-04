@@ -43,12 +43,32 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
-    /* Make the State dropdown align nicely */
     select {
+      color: black;
+      background-color: #fcbe95;
+
+      /* Make the State dropdown align nicely */
       text-align-last: center;
       text-align: center;
       padding-left: 24px;
-      */
+    }
+
+    input {
+      color: black;
+      background-color: #fcbe95;
+    }
+
+    email {
+      color: black;
+      background-color: #fcbe95;
+    }
+
+    .invalid {
+      background-color: red;
+      color: white;
+    }
+
+    .valid {
     }
 
     /* Don't have the zip dropdown have up/down buttons.*/
@@ -58,7 +78,6 @@
       -webkit-appearance: none;
       margin: 0;
     }
-
     /* Firefox */
     input[type=number] {
       -moz-appearance: textfield;
@@ -396,12 +415,10 @@ of power is null and void."
                           <p style="text-align: right; line-height: 1.2; word-break: break-word; font-size: 20px; mso-line-height-alt: 24px; margin: 0;">
                             <!-- STATE CONTROL  LABEL -->
                             <label for="m_5949356732789988194entry_18563292">
-                                                                <span style="font-size: 18px;">
-                                                                    STATE
-                                                                    <span aria-hidden="true"
-                                                                          style="color:#c43b1d">*</span>
-                                                                </span>
-
+                              <span style="font-size: 18px;">
+                                  STATE
+                                  <span aria-hidden="true" style="color:#c43b1d">*</span>
+                              </span>
                               <label for="m_5949356732789988194itemView.getDomIdToLabel()"
                                      aria-label="(Required field)">
                               </label>
@@ -453,7 +470,7 @@ of power is null and void."
                         <!-- STATE INPUT CONTROL -->
                         <div align="left">
 
-                          <select style="text-decoration:none;border-radius: 10px;display:block;color:#39393a;background-color:#fcbe95;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:80%; width:calc(80% - 2px);;border-top:2px solid #39393a;border-right:2px solid #39393a;border-bottom:2px solid #39393a;border-left:2px solid #39393a;padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
+                          <select style="text-decoration:none;border-radius: 10px;display:block;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:80%; width:calc(80% - 2px);;border-top:2px solid #39393a;border-right:2px solid #39393a;border-bottom:2px solid #39393a;border-left:2px solid #39393a;padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
                                   type="text" name="entry.18563292" dir="auto" aria-label="State  " aria-required="true"
                                   title="state"
                                   id="state">
@@ -560,23 +577,17 @@ of power is null and void."
 
 
                           <p style="text-align: right; word-break: break-word; font-size: 20px; mso-line-height-alt: 24px; margin: 0;">
-
                             <!-- ZIP CODE CONTROL LABEL  -->
                             <label for="m_5949356732789988194entry_1927352609">
-                                                                <span style="font-size: 18px;">
-                                                                    ZIP CODE
-                                                                    <span aria-hidden="true"
-                                                                          style="color:#c43b1d">*</span>
-                                                                </span>
-
+                              <span style="font-size: 18px;">
+                                  ZIP CODE
+                                  <span aria-hidden="true" style="color:#c43b1d">*</span>
+                              </span>
                               <label for="m_5949356732789988194itemView.getDomIdToLabel()"
                                      aria-label="(Required field)">
                               </label>
-
                             </label>
-
                           </p>
-
 
                         </div>
                       </div>
@@ -618,11 +629,11 @@ of power is null and void."
                                   <center style="color:#000316; font-family:'Trebuchet MS', Tahoma, sans-serif; font-size:16px">
                         <![endif]-->
 
-                        <div align="left">
+                        <div align="left" class="inputdiv">
 
                           <!-- ZIP CODE INPUT CONTROL -->
 
-                          <input style="text-decoration:none;border-radius: 10px;-moz-appearance: textfield;display:block;color:#000000;background-color:#fcbe95;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:80%; width:calc(80% - 2px);;border-top:2px solid #39393a;border-right:2px solid #39393a;border-bottom:2px solid #39393a;border-left:2px solid #39393a;padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
+                          <input style="text-decoration:none;border-radius: 10px;-moz-appearance: textfield;display:block;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:80%; width:calc(80% - 2px);;border-top:2px solid #39393a;border-right:2px solid #39393a;border-bottom:2px solid #39393a;border-left:2px solid #39393a;padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
                                  type="text" pattern="[0-9]{5}" name="entry.1927352609" dir="auto"
                                  aria-label="Zip  Must be a number" aria-required="true" title="Must be a number"
                                  id="zipcode" placeholder="Zip Code">
@@ -679,15 +690,12 @@ of power is null and void."
 
                             <!-- EMAIL CONTROL  LABEL -->
                             <label for="m_5949356732789988194entry_532194116">
-                                        <span style="font-size: 18px;">
-                                            E-MAIL
-                                            <span aria-hidden="true" style="color:#c43b1d">*</span>
-                                        </span>
-
-                              <label for="m_5949356732789988194itemView.getDomIdToLabel()"
-                                     aria-label="(Required field)">
+                              <span style="font-size: 18px;">
+                                  E-MAIL
+                                  <span aria-hidden="true" style="color:#c43b1d">*</span>
+                              </span>
+                              <label for="m_5949356732789988194itemView.getDomIdToLabel()" aria-label="(Required field)">
                               </label>
-
                             </label>
 
                           </p>
@@ -734,8 +742,8 @@ of power is null and void."
                         <![endif]-->
 
                         <!-- EMAIL INPUT CONTROL -->
-                        <div align="left">
-                          <input style="text-decoration:none;border-radius: 10px;display:block;color:#000000;background-color:#fcbe95;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:80%; width:calc(80% - 2px);;border-top:2px solid #39393a;border-right:2px solid #39393a;border-bottom:2px solid #39393a;border-left:2px solid #39393a;padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
+                        <div align="left" class="inputdiv">
+                          <input style="text-decoration:none;border-radius: 10px;display:block;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:80%; width:calc(80% - 2px);;border-top:2px solid #39393a;border-right:2px solid #39393a;border-bottom:2px solid #39393a;border-left:2px solid #39393a;padding-top:5px;padding-bottom:5px;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
                                  type="text" name="entry.532194116" dir="auto" aria-label="Email  "
                                  aria-required="true" title=""
                                  id="email" placeholder="Email Address">
@@ -851,7 +859,7 @@ of power is null and void."
                             <td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: 'Trebuchet MS', Tahoma, sans-serif">
                         <![endif]-->
                         <div style="color:#555555;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
-                          <div style="line-height: 1.2; font-size: 12px; font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; color: #555555; mso-line-height-alt: 14px;">
+                          <div class="inputdiv" style="line-height: 1.2; font-size: 12px; font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; color: #555555; mso-line-height-alt: 14px;">
 
                             <li>
 
@@ -1085,6 +1093,29 @@ of power is null and void."
 <!--[if (IE)]></div><![endif]-->
 
 <script>
+  const stateInput = $("#state");
+  const zipcodeInput = $("#zipcode");
+  const emailInput = $("#email");
+
+  widgets = [stateInput, zipcodeInput, emailInput];
+
+  jQuery.fn.any = function(filter) {
+    for (i=0 ; i<this.length ; i++) {
+       if (filter.call(this[i])) return true;
+    }
+    return false;
+  };
+
+  jQuery.fn.all = function(filter) {
+    for (i=0 ; i<this.length ; i++) {
+       if (! filter.call(this[i]))
+         return false;
+       else
+         console.log()
+    }
+    return true;
+  };
+
   const zipData = {
     "AL": ["350", "369"],
     "AK": ["995", "999"],
@@ -1198,17 +1229,129 @@ of power is null and void."
   console.log(validateZip("MO", 63126));
   console.log(!validateZip("FL", 34800));
 
-  function zip_or_state_change(e) {
+  function zipOrStateChange(e) {
     console.log("zip or state change", e);
+
+    state = stateInput[0].value;
+    zipcode = zipcodeInput[0].value;
+
+    if (state == "") {
+      stateInput.removeClass("valid");
+      stateInput.addClass("invalid");
+    }
+    else {
+      stateInput.removeClass("invalid");
+      stateInput.addClass("valid");
+    }
+
+    if (zipcode == "") {
+      zipcodeInput.removeClass("valid");
+      // Don't explicitly flag it is invalid if it wasn't before.
+    }
+    else if (state == "") {
+      // Leave the state validity as it was before.
+      return;
+    }
+    else if (validateZip(state, zipcode)) {
+      zipcodeInput.removeClass("invalid");
+      zipcodeInput.addClass("valid");
+    } else {
+      zipcodeInput.removeClass("valid");
+      zipcodeInput.addClass("invalid");
+    }
   }
 
-  $(document).on('change', '#zipcode', zip_or_state_change);
-  $(document).on('change', '#state', zip_or_state_change);
+  $(document).on('change', '#state', zipOrStateChange);
+  $(document).on('change', '#zipcode', zipOrStateChange);
+
+  function zipKeyUp(e) {
+    if (zipcodeInput.hasClass("valid") || zipcodeInput.hasClass("invalid")) {
+      // Only on a given keystroke if it is being edited after the first change.
+      zipOrStateChange(e);
+    }
+  }
+
+  $(document).on('keyup', '#zipcode', zipKeyUp);
+
+  const email_regex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  function validateEmail(email) {
+    return email_regex.test(String(email).toLowerCase());
+  }
+
+  function emailChange(e) {
+    const email = emailInput[0].value;
+    if (validateEmail(email)) {
+      emailInput.removeClass("invalid");
+      emailInput.addClass("valid");
+    } else {
+      emailInput.removeClass("valid");
+      emailInput.addClass("invalid");
+    }
+  }
+
+  $(document).on('change', '#email', emailChange);
+
+  function email_keyup(e) {
+    if (emailInput.hasClass("valid") || emailInput.hasClass("invalid")) {
+      // Only validate the email on a given keystroke if it is being edited after the first change.
+      emailChange(e);
+    }
+  }
+
+  $(document).on('keyup', '#email', email_keyup);
+
+  function resetInputs() {
+    // statInput.value = "";  // Leave the state input.
+    zipcodeInput.prop("value", "");
+    emailInput.prop("value", "");
+    $(widgets).each(function() {
+      this.removeClass("valid");
+      this.removeClass("invalid");
+    });
+  }
 
   $("#m_-4449408468207555261ss-form").submit(
       function (e) {
         // Don't let the regular form submit occur.
         e.preventDefault();
+
+        validityUncertainAtSubmitTime =
+            ! $(widgets).all(
+              function() {
+                if (this.hasClass("valid") || this.hasClass("invalid")) {
+                  console.info("Has tags:", this);
+                  return true;
+                } else {
+                  console.info("NO tags:", this);
+                  return false;
+                }
+              }
+            );
+
+        // The widget state may have changed but not be registered yet.
+        // Re-evaluate state explicilty.
+        zipOrStateChange(e);
+        emailChange(e);
+
+        valid =
+            $(widgets).all(
+              function() {
+                return this.hasClass("valid");
+              }
+            );
+
+        if ((!valid) & validityUncertainAtSubmitTime) {
+          console.warn("Ignoring submit because the fields are invalid with changes the UI was not yet showing in red.")
+          return;
+        }
+
+        if (!valid) {
+          Swal.fire(
+            "Field errors!"
+          )
+          return;
+        }
 
         const form = $(this);
         const targetUrl = form.attr('action');
@@ -1224,7 +1367,6 @@ of power is null and void."
           type: "POST",
           url: finalUrl,
           data: form.serialize(), // serializes the form's elements.
-          //dataType: 'jsonp',
         };
 
         promise = $.ajax(request);
@@ -1232,11 +1374,10 @@ of power is null and void."
 
         promise.done(function (data) {
           console.info(data);
-          button.css("backgroundColor", "gray")
-          buttonDiv.css("backgroundColor", "gray")
-          button.prop('disabled', true);
-
           Swal.fire('Submitted!', 'Thank you for your support!')
+            .then(function() {
+              resetInputs();
+            });
         }).fail(function (err) {
           console.error(err);
           if (err.statusText == "Bad Request") {
