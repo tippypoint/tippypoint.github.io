@@ -1,15 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
+import Signin from "./Signin.js";
 import {
-  Typography,
-  AppBar,
-  Toolbar,
-  Grid,
   CircularProgress,
   Paper,
   Link
 } from "@material-ui/core";
-import FilterForm from "./components/FilterForm";
 import { connect } from "react-redux";
 import { CALENDAR_PATH, AION_URL } from "./Config";
 
@@ -37,11 +33,8 @@ class App extends Component {
         );
       } else {
         return (
-          <Grid container justify="center">
-            <Grid item xs={8}>
-              <FilterForm />
-            </Grid>
-          </Grid>
+          <Signin>
+          </Signin>
         );
       }
     }
@@ -50,13 +43,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h4" color="inherit">
-              Aion: Calendar filter
-            </Typography>
-          </Toolbar>
-        </AppBar>
         {this.getBody()}
       </div>
     );
