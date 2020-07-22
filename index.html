@@ -1,6 +1,2818 @@
-<html>
-  <body>
-    Under construction.
-  </body>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
 
+<head>
+    <!--[if gte mso 9]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml><![endif]-->
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+
+    <!--[if !mso]><!-->
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <!--<![endif]-->
+    <title></title>
+    <!--[if !mso]><!-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+
+
+    <!--<![endif]-->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <style>
+        .swal2-popup.swal2-toast {
+            flex-direction: row;
+            align-items: center;
+            width: auto;
+            padding: .625em;
+            overflow-y: hidden;
+            background: #fff;
+            box-shadow: 0 0 .625em #d9d9d9
+        }
+        
+        .swal2-popup.swal2-toast .swal2-header {
+            flex-direction: row
+        }
+        
+        .swal2-popup.swal2-toast .swal2-title {
+            flex-grow: 1;
+            justify-content: flex-start;
+            margin: 0 .6em;
+            font-size: 1em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-footer {
+            margin: .5em 0 0;
+            padding: .5em 0 0;
+            font-size: .8em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-close {
+            position: static;
+            width: .8em;
+            height: .8em;
+            line-height: .8
+        }
+        
+        .swal2-popup.swal2-toast .swal2-content {
+            justify-content: flex-start;
+            font-size: 1em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-icon {
+            width: 2em;
+            min-width: 2em;
+            height: 2em;
+            margin: 0
+        }
+        
+        .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
+            display: flex;
+            align-items: center;
+            font-size: 1.8em;
+            font-weight: 700
+        }
+        
+        @media all and (-ms-high-contrast:none),
+        (-ms-high-contrast:active) {
+            .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
+                font-size: .25em
+            }
+        }
+        
+        .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+            width: 2em;
+            height: 2em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+            top: .875em;
+            width: 1.375em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {
+            left: .3125em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {
+            right: .3125em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-actions {
+            flex-basis: auto!important;
+            width: auto;
+            height: auto;
+            margin: 0 .3125em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-styled {
+            margin: 0 .3125em;
+            padding: .3125em .625em;
+            font-size: 1em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-styled:focus {
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(50, 100, 150, .4)
+        }
+        
+        .swal2-popup.swal2-toast .swal2-success {
+            border-color: #a5dc86
+        }
+        
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line] {
+            position: absolute;
+            width: 1.6em;
+            height: 3em;
+            transform: rotate(45deg);
+            border-radius: 50%
+        }
+        
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left] {
+            top: -.8em;
+            left: -.5em;
+            transform: rotate(-45deg);
+            transform-origin: 2em 2em;
+            border-radius: 4em 0 0 4em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right] {
+            top: -.25em;
+            left: .9375em;
+            transform-origin: 0 1.5em;
+            border-radius: 0 4em 4em 0
+        }
+        
+        .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+            width: 2em;
+            height: 2em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+            top: 0;
+            left: .4375em;
+            width: .4375em;
+            height: 2.6875em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line] {
+            height: .3125em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip] {
+            top: 1.125em;
+            left: .1875em;
+            width: .75em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long] {
+            top: .9375em;
+            right: .1875em;
+            width: 1.375em
+        }
+        
+        .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip {
+            -webkit-animation: swal2-toast-animate-success-line-tip .75s;
+            animation: swal2-toast-animate-success-line-tip .75s
+        }
+        
+        .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long {
+            -webkit-animation: swal2-toast-animate-success-line-long .75s;
+            animation: swal2-toast-animate-success-line-long .75s
+        }
+        
+        .swal2-popup.swal2-toast.swal2-show {
+            -webkit-animation: swal2-toast-show .5s;
+            animation: swal2-toast-show .5s
+        }
+        
+        .swal2-popup.swal2-toast.swal2-hide {
+            -webkit-animation: swal2-toast-hide .1s forwards;
+            animation: swal2-toast-hide .1s forwards
+        }
+        
+        .swal2-container {
+            display: flex;
+            position: fixed;
+            z-index: 1060;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: .625em;
+            overflow-x: hidden;
+            transition: background-color .1s;
+            -webkit-overflow-scrolling: touch
+        }
+        
+        .swal2-container.swal2-backdrop-show,
+        .swal2-container.swal2-noanimation {
+            background: rgba(0, 0, 0, .4)
+        }
+        
+        .swal2-container.swal2-backdrop-hide {
+            background: 0 0!important
+        }
+        
+        .swal2-container.swal2-top {
+            align-items: flex-start
+        }
+        
+        .swal2-container.swal2-top-left,
+        .swal2-container.swal2-top-start {
+            align-items: flex-start;
+            justify-content: flex-start
+        }
+        
+        .swal2-container.swal2-top-end,
+        .swal2-container.swal2-top-right {
+            align-items: flex-start;
+            justify-content: flex-end
+        }
+        
+        .swal2-container.swal2-center {
+            align-items: center
+        }
+        
+        .swal2-container.swal2-center-left,
+        .swal2-container.swal2-center-start {
+            align-items: center;
+            justify-content: flex-start
+        }
+        
+        .swal2-container.swal2-center-end,
+        .swal2-container.swal2-center-right {
+            align-items: center;
+            justify-content: flex-end
+        }
+        
+        .swal2-container.swal2-bottom {
+            align-items: flex-end
+        }
+        
+        .swal2-container.swal2-bottom-left,
+        .swal2-container.swal2-bottom-start {
+            align-items: flex-end;
+            justify-content: flex-start
+        }
+        
+        .swal2-container.swal2-bottom-end,
+        .swal2-container.swal2-bottom-right {
+            align-items: flex-end;
+            justify-content: flex-end
+        }
+        
+        .swal2-container.swal2-bottom-end>:first-child,
+        .swal2-container.swal2-bottom-left>:first-child,
+        .swal2-container.swal2-bottom-right>:first-child,
+        .swal2-container.swal2-bottom-start>:first-child,
+        .swal2-container.swal2-bottom>:first-child {
+            margin-top: auto
+        }
+        
+        .swal2-container.swal2-grow-fullscreen>.swal2-modal {
+            display: flex!important;
+            flex: 1;
+            align-self: stretch;
+            justify-content: center
+        }
+        
+        .swal2-container.swal2-grow-row>.swal2-modal {
+            display: flex!important;
+            flex: 1;
+            align-content: center;
+            justify-content: center
+        }
+        
+        .swal2-container.swal2-grow-column {
+            flex: 1;
+            flex-direction: column
+        }
+        
+        .swal2-container.swal2-grow-column.swal2-bottom,
+        .swal2-container.swal2-grow-column.swal2-center,
+        .swal2-container.swal2-grow-column.swal2-top {
+            align-items: center
+        }
+        
+        .swal2-container.swal2-grow-column.swal2-bottom-left,
+        .swal2-container.swal2-grow-column.swal2-bottom-start,
+        .swal2-container.swal2-grow-column.swal2-center-left,
+        .swal2-container.swal2-grow-column.swal2-center-start,
+        .swal2-container.swal2-grow-column.swal2-top-left,
+        .swal2-container.swal2-grow-column.swal2-top-start {
+            align-items: flex-start
+        }
+        
+        .swal2-container.swal2-grow-column.swal2-bottom-end,
+        .swal2-container.swal2-grow-column.swal2-bottom-right,
+        .swal2-container.swal2-grow-column.swal2-center-end,
+        .swal2-container.swal2-grow-column.swal2-center-right,
+        .swal2-container.swal2-grow-column.swal2-top-end,
+        .swal2-container.swal2-grow-column.swal2-top-right {
+            align-items: flex-end
+        }
+        
+        .swal2-container.swal2-grow-column>.swal2-modal {
+            display: flex!important;
+            flex: 1;
+            align-content: center;
+            justify-content: center
+        }
+        
+        .swal2-container.swal2-no-transition {
+            transition: none!important
+        }
+        
+        .swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal {
+            margin: auto
+        }
+        
+        @media all and (-ms-high-contrast:none),
+        (-ms-high-contrast:active) {
+            .swal2-container .swal2-modal {
+                margin: 0!important
+            }
+        }
+        
+        .swal2-popup {
+            display: none;
+            position: relative;
+            box-sizing: border-box;
+            flex-direction: column;
+            justify-content: center;
+            width: 32em;
+            max-width: 100%;
+            padding: 1.25em;
+            border: none;
+            border-radius: .3125em;
+            background: #fff;
+            font-family: inherit;
+            font-size: 1rem
+        }
+        
+        .swal2-popup:focus {
+            outline: 0
+        }
+        
+        .swal2-popup.swal2-loading {
+            overflow-y: hidden
+        }
+        
+        .swal2-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center
+        }
+        
+        .swal2-title {
+            position: relative;
+            max-width: 100%;
+            margin: 0 0 .4em;
+            padding: 0;
+            color: #595959;
+            font-size: 1.875em;
+            font-weight: 600;
+            text-align: center;
+            text-transform: none;
+            word-wrap: break-word
+        }
+        
+        .swal2-actions {
+            display: flex;
+            z-index: 1;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 1.25em auto 0
+        }
+        
+        .swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
+            opacity: .4
+        }
+        
+        .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+            background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1))
+        }
+        
+        .swal2-actions:not(.swal2-loading) .swal2-styled:active {
+            background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2))
+        }
+        
+        .swal2-actions.swal2-loading .swal2-styled.swal2-confirm {
+            box-sizing: border-box;
+            width: 2.5em;
+            height: 2.5em;
+            margin: .46875em;
+            padding: 0;
+            -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+            animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+            border: .25em solid transparent;
+            border-radius: 100%;
+            border-color: transparent;
+            background-color: transparent!important;
+            color: transparent!important;
+            cursor: default;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+        
+        .swal2-actions.swal2-loading .swal2-styled.swal2-cancel {
+            margin-right: 30px;
+            margin-left: 30px
+        }
+        
+        .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after {
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+            -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+            animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+            border: 3px solid #999;
+            border-radius: 50%;
+            border-right-color: transparent;
+            box-shadow: 1px 1px 1px #fff
+        }
+        
+        .swal2-styled {
+            margin: .3125em;
+            padding: .625em 2em;
+            box-shadow: none;
+            font-weight: 500
+        }
+        
+        .swal2-styled:not([disabled]) {
+            cursor: pointer
+        }
+        
+        .swal2-styled.swal2-confirm {
+            border: 0;
+            border-radius: .25em;
+            background: initial;
+            background-color: #3085d6;
+            color: #fff;
+            font-size: 1.0625em
+        }
+        
+        .swal2-styled.swal2-cancel {
+            border: 0;
+            border-radius: .25em;
+            background: initial;
+            background-color: #aaa;
+            color: #fff;
+            font-size: 1.0625em
+        }
+        
+        .swal2-styled:focus {
+            outline: 0;
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(50, 100, 150, .4)
+        }
+        
+        .swal2-styled::-moz-focus-inner {
+            border: 0
+        }
+        
+        .swal2-footer {
+            justify-content: center;
+            margin: 1.25em 0 0;
+            padding: 1em 0 0;
+            border-top: 1px solid #eee;
+            color: #545454;
+            font-size: 1em
+        }
+        
+        .swal2-timer-progress-bar-container {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: .25em;
+            overflow: hidden;
+            border-bottom-right-radius: .3125em;
+            border-bottom-left-radius: .3125em
+        }
+        
+        .swal2-timer-progress-bar {
+            width: 100%;
+            height: .25em;
+            background: rgba(0, 0, 0, .2)
+        }
+        
+        .swal2-image {
+            max-width: 100%;
+            margin: 1.25em auto
+        }
+        
+        .swal2-close {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            align-items: center;
+            justify-content: center;
+            width: 1.2em;
+            height: 1.2em;
+            padding: 0;
+            overflow: hidden;
+            transition: color .1s ease-out;
+            border: none;
+            border-radius: 0;
+            background: 0 0;
+            color: #ccc;
+            font-family: serif;
+            font-size: 2.5em;
+            line-height: 1.2;
+            cursor: pointer
+        }
+        
+        .swal2-close:hover {
+            transform: none;
+            background: 0 0;
+            color: #f27474
+        }
+        
+        .swal2-close::-moz-focus-inner {
+            border: 0
+        }
+        
+        .swal2-content {
+            z-index: 1;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            color: #545454;
+            font-size: 1.125em;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+            word-wrap: break-word
+        }
+        
+        .swal2-checkbox,
+        .swal2-file,
+        .swal2-input,
+        .swal2-radio,
+        .swal2-select,
+        .swal2-textarea {
+            margin: 1em auto
+        }
+        
+        .swal2-file,
+        .swal2-input,
+        .swal2-textarea {
+            box-sizing: border-box;
+            width: 100%;
+            transition: border-color .3s, box-shadow .3s;
+            border: 1px solid #d9d9d9;
+            border-radius: .1875em;
+            background: inherit;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .06);
+            color: inherit;
+            font-size: 1.125em
+        }
+        
+        .swal2-file.swal2-inputerror,
+        .swal2-input.swal2-inputerror,
+        .swal2-textarea.swal2-inputerror {
+            border-color: #f27474!important;
+            box-shadow: 0 0 2px #f27474!important
+        }
+        
+        .swal2-file:focus,
+        .swal2-input:focus,
+        .swal2-textarea:focus {
+            border: 1px solid #b4dbed;
+            outline: 0;
+            box-shadow: 0 0 3px #c4e6f5
+        }
+        
+        .swal2-file::-moz-placeholder,
+        .swal2-input::-moz-placeholder,
+        .swal2-textarea::-moz-placeholder {
+            color: #ccc
+        }
+        
+        .swal2-file:-ms-input-placeholder,
+        .swal2-input:-ms-input-placeholder,
+        .swal2-textarea:-ms-input-placeholder {
+            color: #ccc
+        }
+        
+        .swal2-file::-ms-input-placeholder,
+        .swal2-input::-ms-input-placeholder,
+        .swal2-textarea::-ms-input-placeholder {
+            color: #ccc
+        }
+        
+        .swal2-file::placeholder,
+        .swal2-input::placeholder,
+        .swal2-textarea::placeholder {
+            color: #ccc
+        }
+        
+        .swal2-range {
+            margin: 1em auto;
+            background: #fff
+        }
+        
+        .swal2-range input {
+            width: 80%
+        }
+        
+        .swal2-range output {
+            width: 20%;
+            color: inherit;
+            font-weight: 600;
+            text-align: center
+        }
+        
+        .swal2-range input,
+        .swal2-range output {
+            height: 2.625em;
+            padding: 0;
+            font-size: 1.125em;
+            line-height: 2.625em
+        }
+        
+        .swal2-input {
+            height: 2.625em;
+            padding: 0 .75em
+        }
+        
+        .swal2-input[type=number] {
+            max-width: 10em
+        }
+        
+        .swal2-file {
+            background: inherit;
+            font-size: 1.125em
+        }
+        
+        .swal2-textarea {
+            height: 6.75em;
+            padding: .75em
+        }
+        
+        .swal2-select {
+            min-width: 50%;
+            max-width: 100%;
+            padding: .375em .625em;
+            background: inherit;
+            color: inherit;
+            font-size: 1.125em
+        }
+        
+        .swal2-checkbox,
+        .swal2-radio {
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            color: inherit
+        }
+        
+        .swal2-checkbox label,
+        .swal2-radio label {
+            margin: 0 .6em;
+            font-size: 1.125em
+        }
+        
+        .swal2-checkbox input,
+        .swal2-radio input {
+            margin: 0 .4em
+        }
+        
+        .swal2-validation-message {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: .625em;
+            overflow: hidden;
+            background: #f0f0f0;
+            color: #666;
+            font-size: 1em;
+            font-weight: 300
+        }
+        
+        .swal2-validation-message::before {
+            content: "!";
+            display: inline-block;
+            width: 1.5em;
+            min-width: 1.5em;
+            height: 1.5em;
+            margin: 0 .625em;
+            border-radius: 50%;
+            background-color: #f27474;
+            color: #fff;
+            font-weight: 600;
+            line-height: 1.5em;
+            text-align: center
+        }
+        
+        .swal2-icon {
+            position: relative;
+            box-sizing: content-box;
+            justify-content: center;
+            width: 5em;
+            height: 5em;
+            margin: 1.25em auto 1.875em;
+            border: .25em solid transparent;
+            border-radius: 50%;
+            font-family: inherit;
+            line-height: 5em;
+            cursor: default;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+        
+        .swal2-icon .swal2-icon-content {
+            display: flex;
+            align-items: center;
+            font-size: 3.75em
+        }
+        
+        .swal2-icon.swal2-error {
+            border-color: #f27474;
+            color: #f27474
+        }
+        
+        .swal2-icon.swal2-error .swal2-x-mark {
+            position: relative;
+            flex-grow: 1
+        }
+        
+        .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+            display: block;
+            position: absolute;
+            top: 2.3125em;
+            width: 2.9375em;
+            height: .3125em;
+            border-radius: .125em;
+            background-color: #f27474
+        }
+        
+        .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {
+            left: 1.0625em;
+            transform: rotate(45deg)
+        }
+        
+        .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {
+            right: 1em;
+            transform: rotate(-45deg)
+        }
+        
+        .swal2-icon.swal2-error.swal2-icon-show {
+            -webkit-animation: swal2-animate-error-icon .5s;
+            animation: swal2-animate-error-icon .5s
+        }
+        
+        .swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark {
+            -webkit-animation: swal2-animate-error-x-mark .5s;
+            animation: swal2-animate-error-x-mark .5s
+        }
+        
+        .swal2-icon.swal2-warning {
+            border-color: #facea8;
+            color: #f8bb86
+        }
+        
+        .swal2-icon.swal2-info {
+            border-color: #9de0f6;
+            color: #3fc3ee
+        }
+        
+        .swal2-icon.swal2-question {
+            border-color: #c9dae1;
+            color: #87adbd
+        }
+        
+        .swal2-icon.swal2-success {
+            border-color: #a5dc86;
+            color: #a5dc86
+        }
+        
+        .swal2-icon.swal2-success [class^=swal2-success-circular-line] {
+            position: absolute;
+            width: 3.75em;
+            height: 7.5em;
+            transform: rotate(45deg);
+            border-radius: 50%
+        }
+        
+        .swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left] {
+            top: -.4375em;
+            left: -2.0635em;
+            transform: rotate(-45deg);
+            transform-origin: 3.75em 3.75em;
+            border-radius: 7.5em 0 0 7.5em
+        }
+        
+        .swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right] {
+            top: -.6875em;
+            left: 1.875em;
+            transform: rotate(-45deg);
+            transform-origin: 0 3.75em;
+            border-radius: 0 7.5em 7.5em 0
+        }
+        
+        .swal2-icon.swal2-success .swal2-success-ring {
+            position: absolute;
+            z-index: 2;
+            top: -.25em;
+            left: -.25em;
+            box-sizing: content-box;
+            width: 100%;
+            height: 100%;
+            border: .25em solid rgba(165, 220, 134, .3);
+            border-radius: 50%
+        }
+        
+        .swal2-icon.swal2-success .swal2-success-fix {
+            position: absolute;
+            z-index: 1;
+            top: .5em;
+            left: 1.625em;
+            width: .4375em;
+            height: 5.625em;
+            transform: rotate(-45deg)
+        }
+        
+        .swal2-icon.swal2-success [class^=swal2-success-line] {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            height: .3125em;
+            border-radius: .125em;
+            background-color: #a5dc86
+        }
+        
+        .swal2-icon.swal2-success [class^=swal2-success-line][class$=tip] {
+            top: 2.875em;
+            left: .8125em;
+            width: 1.5625em;
+            transform: rotate(45deg)
+        }
+        
+        .swal2-icon.swal2-success [class^=swal2-success-line][class$=long] {
+            top: 2.375em;
+            right: .5em;
+            width: 2.9375em;
+            transform: rotate(-45deg)
+        }
+        
+        .swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip {
+            -webkit-animation: swal2-animate-success-line-tip .75s;
+            animation: swal2-animate-success-line-tip .75s
+        }
+        
+        .swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long {
+            -webkit-animation: swal2-animate-success-line-long .75s;
+            animation: swal2-animate-success-line-long .75s
+        }
+        
+        .swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right {
+            -webkit-animation: swal2-rotate-success-circular-line 4.25s ease-in;
+            animation: swal2-rotate-success-circular-line 4.25s ease-in
+        }
+        
+        .swal2-progress-steps {
+            align-items: center;
+            margin: 0 0 1.25em;
+            padding: 0;
+            background: inherit;
+            font-weight: 600
+        }
+        
+        .swal2-progress-steps li {
+            display: inline-block;
+            position: relative
+        }
+        
+        .swal2-progress-steps .swal2-progress-step {
+            z-index: 20;
+            width: 2em;
+            height: 2em;
+            border-radius: 2em;
+            background: #3085d6;
+            color: #fff;
+            line-height: 2em;
+            text-align: center
+        }
+        
+        .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
+            background: #3085d6
+        }
+        
+        .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step {
+            background: #add8e6;
+            color: #fff
+        }
+        
+        .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line {
+            background: #add8e6
+        }
+        
+        .swal2-progress-steps .swal2-progress-step-line {
+            z-index: 10;
+            width: 2.5em;
+            height: .4em;
+            margin: 0 -1px;
+            background: #3085d6
+        }
+        
+        [class^=swal2] {
+            -webkit-tap-highlight-color: transparent
+        }
+        
+        .swal2-show {
+            -webkit-animation: swal2-show .3s;
+            animation: swal2-show .3s
+        }
+        
+        .swal2-hide {
+            -webkit-animation: swal2-hide .15s forwards;
+            animation: swal2-hide .15s forwards
+        }
+        
+        .swal2-noanimation {
+            transition: none
+        }
+        
+        .swal2-scrollbar-measure {
+            position: absolute;
+            top: -9999px;
+            width: 50px;
+            height: 50px;
+            overflow: scroll
+        }
+        
+        .swal2-rtl .swal2-close {
+            right: auto;
+            left: 0
+        }
+        
+        .swal2-rtl .swal2-timer-progress-bar {
+            right: 0;
+            left: auto
+        }
+        
+        @supports (-ms-accelerator:true) {
+            .swal2-range input {
+                width: 100%!important
+            }
+            .swal2-range output {
+                display: none
+            }
+        }
+        
+        @media all and (-ms-high-contrast:none),
+        (-ms-high-contrast:active) {
+            .swal2-range input {
+                width: 100%!important
+            }
+            .swal2-range output {
+                display: none
+            }
+        }
+        
+        @-moz-document url-prefix() {
+            .swal2-close:focus {
+                outline: 2px solid rgba(50, 100, 150, .4)
+            }
+        }
+        
+        @-webkit-keyframes swal2-toast-show {
+            0% {
+                transform: translateY(-.625em) rotateZ(2deg)
+            }
+            33% {
+                transform: translateY(0) rotateZ(-2deg)
+            }
+            66% {
+                transform: translateY(.3125em) rotateZ(2deg)
+            }
+            100% {
+                transform: translateY(0) rotateZ(0)
+            }
+        }
+        
+        @keyframes swal2-toast-show {
+            0% {
+                transform: translateY(-.625em) rotateZ(2deg)
+            }
+            33% {
+                transform: translateY(0) rotateZ(-2deg)
+            }
+            66% {
+                transform: translateY(.3125em) rotateZ(2deg)
+            }
+            100% {
+                transform: translateY(0) rotateZ(0)
+            }
+        }
+        
+        @-webkit-keyframes swal2-toast-hide {
+            100% {
+                transform: rotateZ(1deg);
+                opacity: 0
+            }
+        }
+        
+        @keyframes swal2-toast-hide {
+            100% {
+                transform: rotateZ(1deg);
+                opacity: 0
+            }
+        }
+        
+        @-webkit-keyframes swal2-toast-animate-success-line-tip {
+            0% {
+                top: .5625em;
+                left: .0625em;
+                width: 0
+            }
+            54% {
+                top: .125em;
+                left: .125em;
+                width: 0
+            }
+            70% {
+                top: .625em;
+                left: -.25em;
+                width: 1.625em
+            }
+            84% {
+                top: 1.0625em;
+                left: .75em;
+                width: .5em
+            }
+            100% {
+                top: 1.125em;
+                left: .1875em;
+                width: .75em
+            }
+        }
+        
+        @keyframes swal2-toast-animate-success-line-tip {
+            0% {
+                top: .5625em;
+                left: .0625em;
+                width: 0
+            }
+            54% {
+                top: .125em;
+                left: .125em;
+                width: 0
+            }
+            70% {
+                top: .625em;
+                left: -.25em;
+                width: 1.625em
+            }
+            84% {
+                top: 1.0625em;
+                left: .75em;
+                width: .5em
+            }
+            100% {
+                top: 1.125em;
+                left: .1875em;
+                width: .75em
+            }
+        }
+        
+        @-webkit-keyframes swal2-toast-animate-success-line-long {
+            0% {
+                top: 1.625em;
+                right: 1.375em;
+                width: 0
+            }
+            65% {
+                top: 1.25em;
+                right: .9375em;
+                width: 0
+            }
+            84% {
+                top: .9375em;
+                right: 0;
+                width: 1.125em
+            }
+            100% {
+                top: .9375em;
+                right: .1875em;
+                width: 1.375em
+            }
+        }
+        
+        @keyframes swal2-toast-animate-success-line-long {
+            0% {
+                top: 1.625em;
+                right: 1.375em;
+                width: 0
+            }
+            65% {
+                top: 1.25em;
+                right: .9375em;
+                width: 0
+            }
+            84% {
+                top: .9375em;
+                right: 0;
+                width: 1.125em
+            }
+            100% {
+                top: .9375em;
+                right: .1875em;
+                width: 1.375em
+            }
+        }
+        
+        @-webkit-keyframes swal2-show {
+            0% {
+                transform: scale(.7)
+            }
+            45% {
+                transform: scale(1.05)
+            }
+            80% {
+                transform: scale(.95)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+        
+        @keyframes swal2-show {
+            0% {
+                transform: scale(.7)
+            }
+            45% {
+                transform: scale(1.05)
+            }
+            80% {
+                transform: scale(.95)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+        
+        @-webkit-keyframes swal2-hide {
+            0% {
+                transform: scale(1);
+                opacity: 1
+            }
+            100% {
+                transform: scale(.5);
+                opacity: 0
+            }
+        }
+        
+        @keyframes swal2-hide {
+            0% {
+                transform: scale(1);
+                opacity: 1
+            }
+            100% {
+                transform: scale(.5);
+                opacity: 0
+            }
+        }
+        
+        @-webkit-keyframes swal2-animate-success-line-tip {
+            0% {
+                top: 1.1875em;
+                left: .0625em;
+                width: 0
+            }
+            54% {
+                top: 1.0625em;
+                left: .125em;
+                width: 0
+            }
+            70% {
+                top: 2.1875em;
+                left: -.375em;
+                width: 3.125em
+            }
+            84% {
+                top: 3em;
+                left: 1.3125em;
+                width: 1.0625em
+            }
+            100% {
+                top: 2.8125em;
+                left: .8125em;
+                width: 1.5625em
+            }
+        }
+        
+        @keyframes swal2-animate-success-line-tip {
+            0% {
+                top: 1.1875em;
+                left: .0625em;
+                width: 0
+            }
+            54% {
+                top: 1.0625em;
+                left: .125em;
+                width: 0
+            }
+            70% {
+                top: 2.1875em;
+                left: -.375em;
+                width: 3.125em
+            }
+            84% {
+                top: 3em;
+                left: 1.3125em;
+                width: 1.0625em
+            }
+            100% {
+                top: 2.8125em;
+                left: .8125em;
+                width: 1.5625em
+            }
+        }
+        
+        @-webkit-keyframes swal2-animate-success-line-long {
+            0% {
+                top: 3.375em;
+                right: 2.875em;
+                width: 0
+            }
+            65% {
+                top: 3.375em;
+                right: 2.875em;
+                width: 0
+            }
+            84% {
+                top: 2.1875em;
+                right: 0;
+                width: 3.4375em
+            }
+            100% {
+                top: 2.375em;
+                right: .5em;
+                width: 2.9375em
+            }
+        }
+        
+        @keyframes swal2-animate-success-line-long {
+            0% {
+                top: 3.375em;
+                right: 2.875em;
+                width: 0
+            }
+            65% {
+                top: 3.375em;
+                right: 2.875em;
+                width: 0
+            }
+            84% {
+                top: 2.1875em;
+                right: 0;
+                width: 3.4375em
+            }
+            100% {
+                top: 2.375em;
+                right: .5em;
+                width: 2.9375em
+            }
+        }
+        
+        @-webkit-keyframes swal2-rotate-success-circular-line {
+            0% {
+                transform: rotate(-45deg)
+            }
+            5% {
+                transform: rotate(-45deg)
+            }
+            12% {
+                transform: rotate(-405deg)
+            }
+            100% {
+                transform: rotate(-405deg)
+            }
+        }
+        
+        @keyframes swal2-rotate-success-circular-line {
+            0% {
+                transform: rotate(-45deg)
+            }
+            5% {
+                transform: rotate(-45deg)
+            }
+            12% {
+                transform: rotate(-405deg)
+            }
+            100% {
+                transform: rotate(-405deg)
+            }
+        }
+        
+        @-webkit-keyframes swal2-animate-error-x-mark {
+            0% {
+                margin-top: 1.625em;
+                transform: scale(.4);
+                opacity: 0
+            }
+            50% {
+                margin-top: 1.625em;
+                transform: scale(.4);
+                opacity: 0
+            }
+            80% {
+                margin-top: -.375em;
+                transform: scale(1.15)
+            }
+            100% {
+                margin-top: 0;
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+        
+        @keyframes swal2-animate-error-x-mark {
+            0% {
+                margin-top: 1.625em;
+                transform: scale(.4);
+                opacity: 0
+            }
+            50% {
+                margin-top: 1.625em;
+                transform: scale(.4);
+                opacity: 0
+            }
+            80% {
+                margin-top: -.375em;
+                transform: scale(1.15)
+            }
+            100% {
+                margin-top: 0;
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+        
+        @-webkit-keyframes swal2-animate-error-icon {
+            0% {
+                transform: rotateX(100deg);
+                opacity: 0
+            }
+            100% {
+                transform: rotateX(0);
+                opacity: 1
+            }
+        }
+        
+        @keyframes swal2-animate-error-icon {
+            0% {
+                transform: rotateX(100deg);
+                opacity: 0
+            }
+            100% {
+                transform: rotateX(0);
+                opacity: 1
+            }
+        }
+        
+        @-webkit-keyframes swal2-rotate-loading {
+            0% {
+                transform: rotate(0)
+            }
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+        
+        @keyframes swal2-rotate-loading {
+            0% {
+                transform: rotate(0)
+            }
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+        
+        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+            overflow: hidden
+        }
+        
+        body.swal2-height-auto {
+            height: auto!important
+        }
+        
+        body.swal2-no-backdrop .swal2-container {
+            top: auto;
+            right: auto;
+            bottom: auto;
+            left: auto;
+            max-width: calc(100% - .625em * 2);
+            background-color: transparent!important
+        }
+        
+        body.swal2-no-backdrop .swal2-container>.swal2-modal {
+            box-shadow: 0 0 10px rgba(0, 0, 0, .4)
+        }
+        
+        body.swal2-no-backdrop .swal2-container.swal2-top {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+        
+        body.swal2-no-backdrop .swal2-container.swal2-top-left,
+        body.swal2-no-backdrop .swal2-container.swal2-top-start {
+            top: 0;
+            left: 0
+        }
+        
+        body.swal2-no-backdrop .swal2-container.swal2-top-end,
+        body.swal2-no-backdrop .swal2-container.swal2-top-right {
+            top: 0;
+            right: 0
+        }
+        
+        body.swal2-no-backdrop .swal2-container.swal2-center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+        
+        body.swal2-no-backdrop .swal2-container.swal2-center-left,
+        body.swal2-no-backdrop .swal2-container.swal2-center-start {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%)
+        }
+        
+        body.swal2-no-backdrop .swal2-container.swal2-center-end,
+        body.swal2-no-backdrop .swal2-container.swal2-center-right {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%)
+        }
+        
+        body.swal2-no-backdrop .swal2-container.swal2-bottom {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+        
+        body.swal2-no-backdrop .swal2-container.swal2-bottom-left,
+        body.swal2-no-backdrop .swal2-container.swal2-bottom-start {
+            bottom: 0;
+            left: 0
+        }
+        
+        body.swal2-no-backdrop .swal2-container.swal2-bottom-end,
+        body.swal2-no-backdrop .swal2-container.swal2-bottom-right {
+            right: 0;
+            bottom: 0
+        }
+        
+        @media print {
+            body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+                overflow-y: scroll!important
+            }
+            body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true] {
+                display: none
+            }
+            body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {
+                position: static!important
+            }
+        }
+        
+        body.swal2-toast-shown .swal2-container {
+            background-color: transparent
+        }
+        
+        body.swal2-toast-shown .swal2-container.swal2-top {
+            top: 0;
+            right: auto;
+            bottom: auto;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+        
+        body.swal2-toast-shown .swal2-container.swal2-top-end,
+        body.swal2-toast-shown .swal2-container.swal2-top-right {
+            top: 0;
+            right: 0;
+            bottom: auto;
+            left: auto
+        }
+        
+        body.swal2-toast-shown .swal2-container.swal2-top-left,
+        body.swal2-toast-shown .swal2-container.swal2-top-start {
+            top: 0;
+            right: auto;
+            bottom: auto;
+            left: 0
+        }
+        
+        body.swal2-toast-shown .swal2-container.swal2-center-left,
+        body.swal2-toast-shown .swal2-container.swal2-center-start {
+            top: 50%;
+            right: auto;
+            bottom: auto;
+            left: 0;
+            transform: translateY(-50%)
+        }
+        
+        body.swal2-toast-shown .swal2-container.swal2-center {
+            top: 50%;
+            right: auto;
+            bottom: auto;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+        
+        body.swal2-toast-shown .swal2-container.swal2-center-end,
+        body.swal2-toast-shown .swal2-container.swal2-center-right {
+            top: 50%;
+            right: 0;
+            bottom: auto;
+            left: auto;
+            transform: translateY(-50%)
+        }
+        
+        body.swal2-toast-shown .swal2-container.swal2-bottom-left,
+        body.swal2-toast-shown .swal2-container.swal2-bottom-start {
+            top: auto;
+            right: auto;
+            bottom: 0;
+            left: 0
+        }
+        
+        body.swal2-toast-shown .swal2-container.swal2-bottom {
+            top: auto;
+            right: auto;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+        
+        body.swal2-toast-shown .swal2-container.swal2-bottom-end,
+        body.swal2-toast-shown .swal2-container.swal2-bottom-right {
+            top: auto;
+            right: 0;
+            bottom: 0;
+            left: auto
+        }
+        
+        body.swal2-toast-column .swal2-toast {
+            flex-direction: column;
+            align-items: stretch
+        }
+        
+        body.swal2-toast-column .swal2-toast .swal2-actions {
+            flex: 1;
+            align-self: stretch;
+            height: 2.2em;
+            margin-top: .3125em
+        }
+        
+        body.swal2-toast-column .swal2-toast .swal2-loading {
+            justify-content: center
+        }
+        
+        body.swal2-toast-column .swal2-toast .swal2-input {
+            height: 2em;
+            margin: .3125em auto;
+            font-size: 1em
+        }
+        
+        body.swal2-toast-column .swal2-toast .swal2-validation-message {
+            font-size: 1em
+        }
+        
+        input {
+            font-size: 16 px;
+        }
+        
+        input:focus {
+            font-size: 16px;
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            select,
+            textarea,
+            input {
+                font-size: 16px;
+            }
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            select:focus,
+            textarea:focus,
+            input:focus {
+                font-size: 16px;
+            }
+        }
+
+        input {
+          text-align: center;
+        }
+    </style>
+
+    <!-- facebook -->
+    <meta property="og:title" content="Police Contract Reform">
+    <meta property="og:description" content="Collect signatures to change the law around police union contracts.">
+    <meta property="og:image" content="http://policecontractreform.org/scales.png">
+    <meta property="og:url" content="http://policecontractreform.org/ballot.html">
+
+    <!-- twitter -->
+    <meta name="twitter:title" content="Police Contract Reform ">
+    <meta name="twitter:description" content=" Collect signatures to change the law around police union contracts.">
+    <meta name="twitter:image" content=" http://policecontractreform.org/scales.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        select {
+            color: black;
+            /* Make the State dropdown align nicely */
+            text-align-last: center;
+            text-align: center;
+            padding-left: 24px;
+        }
+        
+        input {
+            color: black;
+        }
+        
+        email {
+            color: black;
+        }
+        
+        .invalid {
+            background-color: red;
+            color: white;
+        }
+        
+        .valid {}
+        /* Don't have the zip dropdown have up/down buttons.*/
+        /* Chrome, Safari, Edge, Opera */
+        
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        /* Firefox */
+        
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+
+<body class="clean-body" style="margin: 0; padding: 0; -webkit-text-size-adjust: 100%; background-color: #FFFFFF;">
+    <!--[if IE]>
+<div class="ie-browser"><![endif]-->
+    <table class="nl-container" role="presentation" style="table-layout: fixed; vertical-align: top;  Margin: 0 auto; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #FFFFFF; width: 100%;" valign="top"
+        width="100%" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+        <tbody>
+            <tr style="vertical-align: top;" valign="top">
+                <td style="word-break: break-word; vertical-align: top;" valign="top">
+                    <!--[if (mso)|(IE)]>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td align="center" style="background-color:#FFFFFF"><![endif]-->
+
+                    <!-- HEADER -->
+                    <div style="background-color:transparent;">
+                        <!-- Change MAX to flow out -->
+                        <div class="block-grid" style="Margin: 0 auto;  max-width: 700px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                            <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                                <!--[if (mso)|(IE)]>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;">
+              <tr>
+                <td align="center">
+                  <table cellpadding="0" cellspacing="0" border="0" style="width:500px">
+                    <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                                <!--[if (mso)|(IE)]>
+            <td align="center" width="500"
+                style="background-color:transparent;width:500px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                valign="top">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="padding-right: 0px; padding-left: 0px;"><![endif]-->
+                                <div class="col num12" style="max-width: 500px; display: table-cell; vertical-align: top; width: 500px;">
+                                    <div style="width:100% !important;">
+                                        <!--[if (!mso)&(!IE)]><!-->
+                                        <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-right: 0px; padding-left: 0px;">
+                                            <!--<![endif]-->
+                                            <!--[if mso]>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Georgia, 'Times New Roman', serif">
+                  <![endif]-->
+                                            <div style="color:#555555;font-family:'Montserrat', Georgia, Times, 'Times New Roman', serif;padding-top:10px;padding-right:10px;padding-left:10px;">
+                                                <div style="font-size: 12px; color: #555555; font-family: 'Montserrat', Georgia, Times, 'Times New Roman', serif; mso-line-height-alt: 14px;">
+                                                    <p style="text-align: center; word-break: break-word; font-size: 30px; mso-line-height-alt: 50px; margin: 0;">
+
+                                                        <span style="font-size: 30px;">
+                                                        <strong>
+                                                            POLICE CONTRACT REFORM
+                                                        </strong>
+                                                    </span>
+
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                            <!--[if (!mso)&(!IE)]><!-->
+                                        </div>
+                                        <!--<![endif]-->
+                                    </div>
+                                </div>
+                                <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notice Area -->
+                    <div style="background-color:transparent;">
+                        <div class="block-grid" style="Margin: 0 auto;  max-width: 700px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                            <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                                <!--[if (mso)|(IE)]>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;">
+              <tr>
+                <td align="center">
+                  <table cellpadding="0" cellspacing="0" border="0" style="width:500px">
+                    <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                                <!--[if (mso)|(IE)]>
+            <td align="center" width="500"
+                style="background-color:transparent;width:500px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                valign="top">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
+                                <div class="col num12" style=" max-width: 500px; display: table-cell; vertical-align: top; width: 500px;">
+                                    <div style="width:100% !important;">
+                                        <!--[if (!mso)&(!IE)]><!-->
+                                        <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                            <!--<![endif]-->
+
+                                            <!-- Fancy Line -->
+                                            <table class="divider" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"
+                                                valign="top" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr style="vertical-align: top;" valign="top">
+                                                        <td class="divider_inner" style="word-break: break-word; vertical-align: top; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 3px; padding-right: 10px; padding-bottom: 3px; padding-left: 10px;" valign="top">
+                                                            <table class="divider_content" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 2px solid #dd6b00; width: 100%;" valign="top" width="100%"
+                                                                cellspacing="0" cellpadding="0" border="0" align="center">
+                                                                <tbody>
+                                                                    <tr style="vertical-align: top;" valign="top">
+                                                                        <td style="word-break: break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top"><span></span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+
+                                            <!--[if mso]>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: 'Trebuchet MS', Tahoma, sans-serif">
+                  <![endif]-->
+
+
+                                            <div style="color:#555555;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;padding-top:3px;padding-right:10px;padding-bottom:3px;padding-left:10px;">
+
+
+                                                <div style="font-size: 12px; font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; color: #555555; mso-line-height-alt: 14px;">
+
+
+                                                    <p style="font-size: 14px; text-align: center; font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; word-break: break-word; mso-line-height-alt: 17px; margin: 0;">
+                                                        Often, police abuses are not addressed because the union contract negotiated with the city has clauses that prevent investigation, discipline and termination for abuse of power.
+                                                    </p>
+
+
+                                                </div>
+
+
+                                            </div>
+
+                                            <!-- Fancy Line -->
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                            <table class="divider" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"
+                                                valign="top" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr style="vertical-align: top;" valign="top">
+                                                        <td class="divider_inner" style="word-break: break-word; vertical-align: top; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 3px; padding-right: 10px; padding-bottom: 3px; padding-left: 10px;" valign="top">
+                                                            <table class="divider_content" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 2px solid #dd6b00; width: 100%;" valign="top" width="100%"
+                                                                cellspacing="0" cellpadding="0" border="0" align="center">
+                                                                <tbody>
+                                                                    <tr style="vertical-align: top;" valign="top">
+                                                                        <td style="word-break: break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top"><span></span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!--[if (!mso)&(!IE)]><!-->
+                                        </div>
+                                        <!--<![endif]-->
+                                    </div>
+                                </div>
+                                <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Direction NEW -->
+                    <div style="background-color:transparent;">
+                        <div class="block-grid" style="Margin: 0 auto;  max-width: 550px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                            <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                                <!--[if (mso)|(IE)]>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;">
+              <tr>
+                <td align="center">
+                  <table cellpadding="0" cellspacing="0" border="0" style="width:500px">
+                    <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                                <!--[if (mso)|(IE)]>
+            <td align="center" width="500"
+                style="background-color:transparent;width:500px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                valign="top">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
+                                <div class="col num12" style=" max-width: 500px; display: table-cell; vertical-align: top; width: 500px;">
+                                    <div style="width:100% !important;">
+                                        <!--[if (!mso)&(!IE)]><!-->
+                                        <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                            <!--<![endif]-->
+                                            <!--[if mso]>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td style="padding-right: 3px; padding-left: 10px; padding-top: 3px; padding-bottom: 3px; font-style: italic; font-family: Tahoma, Verdana, sans-serif">
+                  <![endif]-->
+                                            <div style="color:#555555;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;line-height:1.2;padding-top:3px;padding-right:10px;padding-bottom:3px;padding-left:10px;">
+                                                <div style="line-height: 1.2; font-size: 12px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; color: #555555; mso-line-height-alt: 14px;">
+
+                                                    <p style="font-style:italic; font-size: 20px; line-height: 1.2; word-break: break-word; text-align: center; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 17px; margin: 0;">
+                                                        <strong style="background-color: #FFFF00;">
+                          Add your signature to change the law NOW!
+                        </strong>
+                                                    </p>
+
+                                                </div>
+                                            </div>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                            <!--[if (!mso)&(!IE)]><!-->
+                                        </div>
+                                        <!--<![endif]-->
+                                    </div>
+                                </div>
+                                <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--the main content of this  -->
+                    <div style="background-color:transparent;">
+                        <div class="block-grid" style="Margin: 0 auto;  max-width: 700px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                            <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                                <!--[if (mso)|(IE)]>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;">
+              <tr>
+                <td align="center">
+                  <table cellpadding="0" cellspacing="0" border="0" style="width:500px">
+                    <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                                <!--[if (mso)|(IE)]>
+            <td align="center" width="500"
+                style="background-color:transparent;width:500px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                valign="top">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
+                                <div class="col num12" style=" max-width: 500px; display: table-cell; vertical-align: top; width: 500px;">
+                                    <div style="width:100% !important;">
+                                        <!--[if (!mso)&(!IE)]><!-->
+                                        <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                            <!--<![endif]-->
+                                            <!--[if mso]>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 3px; font-family: 'Trebuchet MS', Tahoma, sans-serif">
+                  <![endif]-->
+                                            <div style="color:#555555;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;line-height:1.5;padding-top:3px;padding-right:10px;padding-bottom:3px;padding-left:10px;">
+                                                <div style="font-size: 12px; font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; color: #555555; mso-line-height-alt: 22px;">
+                                                    <p style="font-size: 20px; line-height: 1.5; text-align: center; font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; word-break: break-word; mso-line-height-alt: 25px; margin: 0;">
+
+                                                        <strong>
+                                                        <span style="color: #0000FF;">
+                                                            "Any
+portion of a police union contract that limits the ability to 
+investigate, discipline or terminate law enforcement officers for abuse 
+of power is null and void."
+                                                        </span>
+                        </strong>
+
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                            <!--[if (!mso)&(!IE)]><!-->
+                                        </div>
+                                        <!--<![endif]-->
+                                    </div>
+                                </div>
+                                <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- forms and fields-->
+
+                    <form class="pure-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe7gl-SsB955NYqLvUUGpijD7tzPOUeEOAwMS5cvJjeIqI7cw/formResponse" method="POST" id="m_-4449408468207555261ss-form" target="_blank">
+                        <ol role="list">
+
+                            <!-- STATE OF  -->
+                            <div style="background-color:transparent;">
+                                <div class="block-grid mixed-two-up" style="Margin: 0 auto;  max-width: 200px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                                    <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;" align="center">
+                                        <!--[if (mso)|(IE)]>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;">
+                  <tr>
+                    <td align="center">
+                      <table cellpadding="0" cellspacing="0" border="0" style="width:500px">
+                        <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                                        <!--[if (mso)|(IE)]>
+                <td align="center" width="125"
+                    style="background-color:transparent;width:125px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                    valign="top">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;">
+                <![endif]-->
+
+                                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                        <!--[if (mso)|(IE)]></td>
+              <td align="center" width="375"
+                  style="background-color:transparent;width:375px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                  valign="top">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
+                                        <div class="col num9" style="display: table-cell; vertical-align: top;">
+                                            <div style="width:100% !important;min-width: 100px;">
+                                                <!--[if (!mso)&(!IE)]><!-->
+                                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                                    <!--<![endif]-->
+                                                    <div class="button-container" style="padding-top:10px;padding-right:0px;padding-bottom:5px;padding-left:0px;" align="center">
+                                                        <!--[if mso]>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                               style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                          <tr>
+                            <td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px"
+                                align="center">
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                                           xmlns:w="urn:schemas-microsoft-com:office:word" href=""
+                                           style="height:31.5pt; width:296.25pt; v-text-anchor:middle;" arcsize="10%"
+                                           stroke="false" fillcolor="#91e2ff">
+                                <w:anchorlock/>
+                                <v:textbox inset="0,0,0,0">
+                                  <center style="color:#000316; font-family:'Trebuchet MS', Tahoma, sans-serif; font-size:16px">
+                        <![endif]-->
+                                                        <!-- STATE INPUT CONTROL -->
+                                                        <div>
+
+                                                            <select type="text" name="entry.18563292" dir="auto" aria-label="State  " aria-required="true" title="state" id="state">
+                            <option value="" selected="selected">State</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                          </select>
+                                                        </div>
+
+                                                        <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+                                                    </div>
+                                                    <!--[if (!mso)&(!IE)]><!-->
+                                                </div>
+                                                <!--<![endif]-->
+                                            </div>
+                                        </div>
+                                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ZIP CODE  BLOCK -->
+                            <div style="background-color:transparent;" align="center">
+                                <div class="block-grid mixed-two-up" style="Margin: 0 auto;  max-width: 200px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                                    <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                                        <!--[if (mso)|(IE)]>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;">
+                  <tr>
+                    <td align="center">
+                      <table cellpadding="0" cellspacing="0" border="0" style="width:500px">
+                        <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                                        <!--[if (mso)|(IE)]>
+                <td align="center" width="125"
+                    style="background-color:transparent;width:125px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" 
+                    valign="top">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;">
+                <![endif]-->
+
+                                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                        <!--[if (mso)|(IE)]></td>
+              <td align="center" width="375"
+                  style="background-color:transparent;width:375px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                  valign="top">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
+                                        <div class="col num9" style="display: table-cell; vertical-align: top;  max-width: 200px; width: 200px;">
+                                            <div style="width:100% !important;min-width: 100px;">
+                                                <!--[if (!mso)&(!IE)]><!-->
+                                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                                    <!--<![endif]-->
+                                                    <div class="button-container" style="padding-top:5px;padding-right:0px;padding-bottom:5px;padding-left:0px;">
+                                                        <!--[if mso]>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                               style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                          <tr>
+                            <td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px"
+                                align="center">
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                                           xmlns:w="urn:schemas-microsoft-com:office:word" href=""
+                                           style="height:31.5pt; width:296.25pt; v-text-anchor:middle;" arcsize="10%"
+                                           stroke="false" fillcolor="#91e2ff">
+                                <w:anchorlock/>
+                                <v:textbox inset="0,0,0,0">
+                                  <center style="color:#000316; font-family:'Trebuchet MS', Tahoma, sans-serif; font-size:16px">
+                        <![endif]-->
+
+                                                        <div class="inputdiv" align="center">
+
+                                                            <!-- ZIP CODE INPUT CONTROL -->
+
+                                                            <input class="pure-input-1" type="text" pattern="[0-9]{5}" name="entry.1927352609" dir="auto" aria-label="Zip  Must be a number" aria-required="true" title="Must be a number" id="zipcode" placeholder="Zip Code">
+                                                        </div>
+
+                                                        <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+                                                    </div>
+                                                    <!--[if (!mso)&(!IE)]><!-->
+                                                </div>
+                                                <!--<![endif]-->
+                                            </div>
+                                        </div>
+                                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EMAIL  BLOCK -->
+                            <div style="background-color:transparent;" align="center">
+                                <div class="block-grid mixed-two-up" style="max-width: 300px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;" align="center">
+                                    <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;" align="center">
+                                        <!--[if (mso)|(IE)]>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;">
+                  <tr>
+                    <td align="center">
+                      <table cellpadding="0" cellspacing="0" border="0" style="width:500px">
+                        <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                                        <!--[if (mso)|(IE)]>
+                <td align="center" width="125"
+                    style="background-color:transparent;width:125px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                    valign="top">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;">
+                <![endif]-->
+
+                                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                        <!--[if (mso)|(IE)]></td>
+              <td align="center" width="375"
+                  style="background-color:transparent;width:375px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                  valign="top">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
+                                        <div class="col num9" style="display: table-cell; vertical-align: top;" align="center">
+                                            <div style="width:100% !important;" align="center">
+                                                <!--[if (!mso)&(!IE)]><!-->
+                                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px;" align="center">
+                                                    <!--<![endif]-->
+                                                    <div class="button-container" style="padding-top:5px;padding-right:0px;padding-bottom:5px;padding-left:0px;" align="center">
+                                                        <!--[if mso]>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                               style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                          <tr>
+                            <td style="padding-top: 10px; padding-right: 0px; padding-bottom: 10px; padding-left: 0px"
+                                align="center">
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                                           xmlns:w="urn:schemas-microsoft-com:office:word" href=""
+                                           style="height:31.5pt; width:296.25pt; v-text-anchor:middle;" arcsize="10%"
+                                           stroke="false" fillcolor="#91e2ff">
+                                <w:anchorlock/>
+                                <v:textbox inset="0,0,0,0">
+                                  <center style="color:#000316; font-family:'Trebuchet MS', Tahoma, sans-serif; font-size:16px">
+                        <![endif]-->
+
+                                                        <!-- EMAIL INPUT CONTROL -->
+                                                        <div class="inputdiv" align="center">
+                                                            <input class="pure-input-1" type="text" name="entry.532194116" dir="auto" aria-label="Email  " aria-required="true" title="" id="email" placeholder="Email Address">
+                                                        </div>
+
+                                                        <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+                                                    </div>
+
+                                                    <!--[if (!mso)&(!IE)]><!-->
+                                                </div>
+
+                                                <!--<![endif]-->
+                                            </div>
+
+                                        </div>
+
+                                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- HIDDEN RADIO GROUP HAS REQUIRED CHECKED BOX -->
+                            <ul role="radiogroup" aria-label="To support this, we need signatures in every state that allows direct ballot measures:  " style="list-style:none;padding:0;margin:.5em 0 0" hidden="">
+
+                                <!-- State support call -->
+                                <div style="background-color:transparent;">
+                                    <div class="block-grid" style="Margin: 0 auto;  max-width: 550px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                                        <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                                            <!--[if (mso)|(IE)]>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;">
+                    <tr>
+                      <td align="center">
+                        <table cellpadding="0" cellspacing="0" border="0" style="width:500px">
+                          <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                                            <!--[if (mso)|(IE)]>
+                  <td align="center" width="500"
+                      style="background-color:transparent;width:500px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                      valign="top">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;">
+                  <![endif]-->
+                                            <div class="col num12" style=" max-width: 500px; display: table-cell; vertical-align: top; width: 500px;">
+                                                <div style="width:100% !important;">
+                                                    <!--[if (!mso)&(!IE)]><!-->
+                                                    <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                                        <!--<![endif]-->
+                                                        <!--[if mso]>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                          <tr>
+                            <td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Tahoma, Verdana, sans-serif">
+                        <![endif]-->
+                                                        <div style="color:#555555;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+                                                            <div style="line-height: 1.2; font-size: 12px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; color: #555555; mso-line-height-alt: 14px;">
+
+                                                                <p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: left; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 17px; margin: 0;">
+
+                                                                    <strong>To support this, we need signatures in every state that allows direct ballot
+                                measures: </strong>
+
+                                                                </p>
+
+                                                            </div>
+                                                        </div>
+                                                        <!--[if mso]></td></tr></table><![endif]-->
+                                                        <!--[if (!mso)&(!IE)]><!-->
+                                                    </div>
+                                                    <!--<![endif]-->
+                                                </div>
+                                            </div>
+                                            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                            <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- RADIO Button Text 1-->
+                                <div style="background-color:transparent;" hidden="">
+                                    <div class="block-grid" style="Margin: 0 auto;  max-width: 550px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                                        <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                                            <!--[if (mso)|(IE)]>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;">
+                    <tr>
+                      <td align="center">
+                        <table cellpadding="0" cellspacing="0" border="0" style="width:500px">
+                          <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                                            <!--[if (mso)|(IE)]>
+                  <td align="center" width="500"
+                      style="background-color:transparent;width:500px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                      valign="top">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;">
+                  <![endif]-->
+                                            <div class="col num12" style=" max-width: 500px; display: table-cell; vertical-align: top; width: 500px;">
+                                                <div style="width:100% !important;">
+                                                    <!--[if (!mso)&(!IE)]><!-->
+                                                    <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                                        <!--<![endif]-->
+                                                        <!--[if mso]>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                          <tr>
+                            <td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: 'Trebuchet MS', Tahoma, sans-serif">
+                        <![endif]-->
+                                                        <div style="color:#555555;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+                                                            <div class="inputdiv" style="line-height: 1.2; font-size: 12px; font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; color: #555555; mso-line-height-alt: 14px;">
+
+                                                                <li>
+
+                                                                    <p style="font-size: 12px; line-height: 1.2; word-break: break-word; text-align: left; font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; mso-line-height-alt: 17px; margin: 0;">
+                                                                        <input checked="checked" style="transform: scale(2);" type="radio" name="entry.191879588" value="I would like to sign.  Let's put this on the ballot in November!" role="radio" aria-label="I would like to sign.  Let's put this on the ballot in November!"
+                                                                            aria-required="true"> &nbsp;&nbsp;&nbsp;&nbsp;I would like to sign. Let's put this on the ballot in November!
+                                                                    </p>
+
+                                                                </li>
+
+                                                            </div>
+                                                        </div>
+                                                        <!--[if mso]></td></tr></table><![endif]-->
+                                                        <!--[if (!mso)&(!IE)]><!-->
+                                                    </div>
+                                                    <!--<![endif]-->
+                                                </div>
+                                            </div>
+                                            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                            <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- RADIO BUTTON #2 -->
+                                <div style="background-color:transparent;" hidden="">
+                                    <div class="block-grid" style="Margin: 0 auto;  max-width: 550px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                                        <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                                            <!--[if (mso)|(IE)]>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;">
+                    <tr>
+                      <td align="center">
+                        <table cellpadding="0" cellspacing="0" border="0" style="width:500px">
+                          <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                                            <!--[if (mso)|(IE)]>
+                  <td align="center" width="500"
+                      style="background-color:transparent;width:500px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                      valign="top">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;">
+                  <![endif]-->
+                                            <div class="col num12" style=" max-width: 500px; display: table-cell; vertical-align: top; width: 500px;">
+                                                <div style="width:100% !important;">
+                                                    <!--[if (!mso)&(!IE)]><!-->
+                                                    <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                                        <!--<![endif]-->
+                                                        <!--[if mso]>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                          <tr>
+                            <td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: 'Trebuchet MS', Tahoma, sans-serif">
+                        <![endif]-->
+                                                        <div style="color:#555555;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+                                                            <div style="line-height: 1.2; font-size: 12px; font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; color: #555555; mso-line-height-alt: 14px;">
+
+
+                                                                <li>
+
+                                                                    <p style="font-size: 12px; line-height: 1.2; word-break: break-word; text-align: left; font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; mso-line-height-alt: 17px; margin: 0;">
+
+                                                                        <input style="transform: scale(2);" type="radio" name="entry.191879588" value="I would like to sign, and also get a packet where I can collect more signatures." role="radio" aria-label="I would like to sign, and also get a packet where I can collect more signatures."
+                                                                            aria-required="true"> &nbsp;&nbsp;&nbsp;&nbsp;I would like to sign, and also get a packet where I can collect
+                                                                        more signatures.
+
+                                                                    </p>
+
+                                                                </li>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--[if mso]></td></tr></table><![endif]-->
+                                                        <!--[if (!mso)&(!IE)]><!-->
+                                                    </div>
+                                                    <!--<![endif]-->
+                                                </div>
+                                            </div>
+                                            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                            <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </ul>
+
+                            <input type="hidden" name="draftResponse" value="[null,null,&quot;4483571582696221959&quot;]">
+                            <input type="hidden" name="pageHistory" value="0">
+                            <input type="hidden" name="usp" value="mail_form_submit">
+                            <input type="hidden" name="fbzx" value="4483571582696221959">
+
+
+                            <!--SUBMIT BUTTON ROW -->
+                            <div style="background-color:transparent;">
+                                <!-- Change MAX to flow out -->
+                                <div class="block-grid" style="Margin: 0 auto;  max-width: 700px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                                    <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                                        <!--[if (mso)|(IE)]>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;">
+                  <tr>
+                    <td align="center">
+                      <table cellpadding="0" cellspacing="0" border="0" style="width:500px">
+                        <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                                        <!--[if (mso)|(IE)]>
+                <td align="center" width="500"
+                    style="background-color:transparent;width:500px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                    valign="top">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;">
+                <![endif]-->
+                                        <div class="col num12" style=" max-width: 100px; display: table-cell; vertical-align: top; width: 500px;">
+                                            <div style="width:100% !important;">
+                                                <!--[if (!mso)&(!IE)]><!-->
+                                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                                    <!--<![endif]-->
+                                                    <div class="button-container" style="padding-top:5px;padding-right:10px;padding-bottom:10px;padding-left:10px;" align="center">
+                                                        <!--[if mso]>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                               style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                          <tr>
+                            <td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px"
+                                align="center">
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                                           xmlns:w="urn:schemas-microsoft-com:office:word" href=""
+                                           style="height:40.5pt; width:210pt; v-text-anchor:middle;" arcsize="8%"
+                                           stroke="false" fillcolor="#000000">
+                                <w:anchorlock/>
+                                <v:textbox inset="0,0,0,0">
+                                  <center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:22px">
+                        <![endif]-->
+                                                        <div>
+                                                            <span>
+                                                                <input class="pure-button pure-button-primary" type="submit" name="submit" value="Send" id="m_5949356732789988194ss-submit">
+                                                            </span>
+                                                        </div>
+                                                        <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+                                                    </div>
+
+                                                    <!--[if mso]>
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Tahoma, Verdana, sans-serif">
+                      <![endif]-->
+                                                    <div style="color:#555555;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+                                                        <div style="line-height: 1.2; font-size: 12px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; color: #555555; mso-line-height-alt: 14px;">
+
+
+                                                            <p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 17px; margin: 0;" hidden="">If we receive enough signatures by July 3rd, we can possibly make the ballot in November! </p>
+
+                                                            <br>
+
+                                                            <p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 17px; margin: 0;">
+                                                                Read more: <a href="https://www.checkthepolice.org/" rel="noopener" style="text-decoration: underline; color: #0027c7;" target="_blank" title="checkthepolice.org">https://www.checkthepolice.org</a>                                                                |
+                                                                <a href="https://www.joincampaignzero.org/contracts" rel="noopener" style="text-decoration: underline; color: #0027c7;" target="_blank" title="joincampaignzero.org">https://www.joincampaignzero.org/contracts</a>
+                                                            </p>
+
+                                                            <br>
+
+                                                            <p style="text-align: center;vertical-align: top;">
+                                                                The next step depends on the laws in each state!
+                                                            </p>
+
+
+                                                            <p style="font-size: 18px; font-style:italic; line-height: 1.2; word-break: break-word; text-align: center; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 17px; margin: 0;">
+                                                                <span style="background-color: #FFFF00; font-weight: bold;">
+                                                                    
+Print this flyer and please hand it out where you can:&nbsp;&nbsp;
+                                                                </span>
+                                                            </p>
+                                                            <p style="text-align: center;">
+                                                                <a href="https://policecontractreform.org/flyer_003_LTR_6U.pdf">
+                                                                    <img src="data:image/png;base64,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"
+                                                                        rel="noopener" style="width:32px; height:32px; text-decoration: underline; color: #0027c7;" target="_blank" title="flyer">
+                                                                </a>
+                                                            </p>
+
+
+                                                            <p></p>
+
+                                                            <p style="text-align: center;vertical-align: top;">
+                                                                Your email is <a href="https://policecontractreform.org/privacy.html">never shared</a> without permission.
+                                                            </p>
+
+                                                        </div>
+                                                    </div>
+                                                    <!--[if mso]></td></tr></table><![endif]-->
+                                                    <!--[if (!mso)&(!IE)]><!-->
+                                                </div>
+                                                <!--<![endif]-->
+                                            </div>
+                                        </div>
+                                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </ol>
+
+                    </form>
+                    <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--[if (IE)]></div><![endif]-->
+
+    <script>
+        const stateInput = $("#state");
+        const zipcodeInput = $("#zipcode");
+        const emailInput = $("#email");
+
+        widgets = [stateInput, zipcodeInput, emailInput];
+
+        jQuery.fn.any = function(filter) {
+            for (i = 0; i < this.length; i++) {
+                if (filter.call(this[i])) return true;
+            }
+            return false;
+        };
+
+        jQuery.fn.all = function(filter) {
+            for (i = 0; i < this.length; i++) {
+                if (!filter.call(this[i]))
+                    return false;
+                else
+                    console.log()
+            }
+            return true;
+        };
+
+        const zipData = {
+            "AL": ["350", "369"],
+            "AK": ["995", "999"],
+            "AZ": ["850", "865"],
+            "AR": ["716", "729", ["755"]], //case "AR": ZIPrange('(ZIP >= 716 && ZIP <= 729) || (ZIP == 755)')
+            "AS": ["967", "967"], //case "AS": ZIPrange('ZIP == 967')
+            "AL": ["350", "369"],
+            "AK": ["995", "999"],
+            "AZ": ["850", "865"],
+            "AR": ["716", "729", ["755"]], //case "AR": ZIPrange('(ZIP >= 716 && ZIP <= 729) || (ZIP == 755)')
+            "AS": ["967", "967"], //case "AS": ZIPrange('ZIP == 967')
+            "CA": ["900", "966"],
+            "CO": ["800", "816"],
+            "CT": ["60", "69"],
+            "DC": ["200", "205"],
+            "DE": ["197", "199"],
+            "FL": ["320", "349", [],
+                ["343", "345", "348"]
+            ], //case "FL": ZIPrange('(ZIP >= 320 && ZIP <= 349) && (ZIP != 343 && ZIP !=345 && ZIP!=348)')
+            "GA": ["300", "319"],
+            "GU": ["969", "969"], //case "GU": ZIPrange('ZIP == 969')
+            "HI": ["967", "968"],
+            "ID": ["832", "838"],
+            "IL": ["600", "629"],
+            "IN": ["460", "479"],
+            "IA": ["500", "528"],
+            "KS": ["660", "679"],
+            "KY": ["400", "427"],
+            "LA": ["700", "714"],
+            "ME": ["39", "49"],
+            "MH": ["969", "969"], //case "MH": ZIPrange('ZIP == 969')
+            "MD": ["206", "219"],
+            "MA": ["10", "27", ["55"]], //case "MA": ZIPrange('(ZIP >= 10 && ZIP <= 27) || (ZIP == 55)')
+            "MI": ["480", "499"],
+            "MN": ["550", "567"],
+            "MS": ["386", "397"],
+            "MO": ["630", "658"],
+            "MT": ["590", "599"],
+            "NE": ["680", "693"],
+            "NV": ["889", "898"],
+            "NH": ["30", "38"],
+            "NJ": ["70", "89"],
+            "NM": ["870", "884"],
+            "NY": ["90", "149", ["4", "63"]], //case "NY": ZIPrange('(ZIP >= 90 && ZIP <= 149) || (ZIP == 4) || (ZIP == 63)')
+            "NC": ["269", "289"],
+            "ND": ["580", "588"],
+            "MP": ["969", "969"], //case "MP": ZIPrange('ZIP == 969')
+            "OH": ["430", "458"],
+            "OK": ["730", "749"],
+            "OR": ["970", "979"],
+            "PA": ["150", "196"],
+            "PR": ["6", "9"],
+            "RI": ["28", "29"],
+            "SC": ["290", "299"],
+            "SD": ["570", "577"],
+            "TN": ["370", "385"],
+            "TX": ["750", "799", ["885"]], //case "TX": ZIPrange('(ZIP >= 750 && ZIP <= 799) || (ZIP == 885)')
+            "UT": ["840", "847"],
+            "VT": ["50", "59"],
+            "VA": ["220", "246", ["201"]], //case "VA": ZIPrange('(ZIP >= 220 && ZIP <= 246) || (ZIP == 201)')
+            "VI": ["8", "8"], //case "VI": ZIPrange('ZIP == 8')
+            "WA": ["980", "994"],
+            "WI": ["530", "549"],
+            "WV": ["247", "268"],
+            "WY": ["820", "831"],
+
+            "AA": ["340", "340"], //case "AA": ZIPrange('ZIP == 340')
+            "AE": ["90", "98"],
+            "AP": ["962", "966"],
+            "MP": ["969", "969"],
+        }
+
+        function validateZip(state, zip) {
+            zd = zipData[state]
+            if (!zd)
+                return false;
+            min = zd[0] * 100;
+            max = zd[1] * 100;
+            if (zd[2])
+                add = zd[2].map(function(prefix) {
+                    return prefix * 100
+                })
+            else
+                add = [];
+            if (zd[3])
+                remove = zd[3].map(function(prefix) {
+                    return prefix * 100
+                })
+            else
+                remove = [];
+
+            //console.info("Zip data for", state, zd);
+            //console.info("Add", add);
+            //console.info("Remove", remove);
+
+            if (add.includes(zip)) {
+                //console.log("Matches include", zip, add);
+                return true;
+            } else if (remove.includes(zip)) {
+                //console.log("Matches 'remove'", zip, remove);
+                return false;
+            } else if ((zip >= min) && (zip <= max)) {
+                //console.log("In range:", zip, min, max);
+                return true;
+            } else {
+                //console.log("Out of range:", zip, min, max);
+                return false;
+            }
+        }
+
+        console.log(!validateZip("33333"));
+        console.log(validateZip("TX", 88500));
+        console.log(validateZip("NY", 6300));
+        console.log(validateZip("MO", 63126));
+        console.log(!validateZip("FL", 34800));
+
+        function zipOrStateChange(e) {
+            console.log("zip or state change", e);
+
+            state = stateInput[0].value;
+            zipcode = zipcodeInput[0].value;
+
+            if (state == "") {
+                stateInput.removeClass("valid");
+                stateInput.addClass("invalid");
+            } else {
+                stateInput.removeClass("invalid");
+                stateInput.addClass("valid");
+            }
+
+            if (zipcode == "") {
+                zipcodeInput.removeClass("valid");
+                // Don't explicitly flag it is invalid if it wasn't before.
+            } else if (state == "") {
+                // Leave the state validity as it was before.
+                return;
+            } else if (validateZip(state, zipcode)) {
+                zipcodeInput.removeClass("invalid");
+                zipcodeInput.addClass("valid");
+            } else {
+                zipcodeInput.removeClass("valid");
+                zipcodeInput.addClass("invalid");
+            }
+        }
+
+        $(document).on('change', '#state', zipOrStateChange);
+        $(document).on('change', '#zipcode', zipOrStateChange);
+
+        function zipKeyUp(e) {
+            if (zipcodeInput.hasClass("valid") || zipcodeInput.hasClass("invalid")) {
+                // Only on a given keystroke if it is being edited after the first change.
+                zipOrStateChange(e);
+            }
+        }
+
+        $(document).on('keyup', '#zipcode', zipKeyUp);
+
+        const email_regex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+        function validateEmail(email) {
+            return email_regex.test(String(email).toLowerCase());
+        }
+
+        function emailChange(e) {
+            const email = emailInput[0].value;
+            if (validateEmail(email)) {
+                emailInput.removeClass("invalid");
+                emailInput.addClass("valid");
+            } else {
+                emailInput.removeClass("valid");
+                emailInput.addClass("invalid");
+            }
+        }
+
+        $(document).on('change', '#email', emailChange);
+
+        function email_keyup(e) {
+            if (emailInput.hasClass("valid") || emailInput.hasClass("invalid")) {
+                // Only validate the email on a given keystroke if it is being edited after the first change.
+                emailChange(e);
+            }
+        }
+
+        $(document).on('keyup', '#email', email_keyup);
+
+        function resetInputs() {
+            // statInput.value = "";  // Leave the state input.
+            zipcodeInput.prop("value", "");
+            emailInput.prop("value", "");
+            $(widgets).each(function() {
+                this.removeClass("valid");
+                this.removeClass("invalid");
+            });
+        }
+
+        $("#m_-4449408468207555261ss-form").submit(
+            function(e) {
+                // Don't let the regular form submit occur.
+                e.preventDefault();
+
+                validityUncertainAtSubmitTime = !$(widgets).all(
+                    function() {
+                        if (this.hasClass("valid") || this.hasClass("invalid")) {
+                            console.info("Has tags:", this);
+                            return true;
+                        } else {
+                            console.info("NO tags:", this);
+                            return false;
+                        }
+                    }
+                );
+
+                // The widget state may have changed but not be registered yet.
+                // Re-evaluate state explicilty.
+                zipOrStateChange(e);
+                emailChange(e);
+
+                valid =
+                    $(widgets).all(
+                        function() {
+                            return this.hasClass("valid");
+                        }
+                    );
+
+                if ((!valid) & validityUncertainAtSubmitTime) {
+                    console.warn("Ignoring submit because the fields are invalid with changes the UI was not yet showing in red.")
+                    return;
+                }
+
+                if (!valid) {
+                    Swal.fire(
+                        "Field errors!"
+                    )
+                    return;
+                }
+
+                const form = $(this);
+                const targetUrl = form.attr('action');
+                const button = $("#m_5949356732789988194ss-submit")
+                const buttonDiv = $("#buttondiv")
+                console.log(form);
+
+                // Deal with CORS conflicts.
+                const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+                const finalUrl = proxyUrl + targetUrl;
+
+                request = {
+                    type: "POST",
+                    url: finalUrl,
+                    data: form.serialize(), // serializes the form's elements.
+                };
+
+                promise = $.ajax(request);
+                console.log(promise);
+
+                promise.done(function(data) {
+                    console.info(data);
+                    Swal.fire('Submitted!', 'Thank you for your support!')
+                        .then(function() {
+                            resetInputs();
+                        });
+                }).fail(function(err) {
+                    console.error(err);
+                    if (err.statusText == "Bad Request") {
+                        Swal.fire('Please fill out all fields.')
+                    } else {
+                        Swal.fire("Submission Error!:", err.statusText)
+                    }
+                });
+            }
+        );
+    </script>
+
+
+
+
+</body>
+
+</html>
